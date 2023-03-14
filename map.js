@@ -13,4 +13,3 @@ var test = L.marker([51.505, -0.09]).addTo(map)
 function onClick(e) {
     test.setLatLng(e.latlng);
 }
-// abc
