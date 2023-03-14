@@ -6,8 +6,10 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 map.on('click', onClick);
 
+var popup = L.popup().setContent('<button>Confirm Position</button>');
+
 var test = L.marker([51.505, -0.09]).addTo(map)
-    .bindPopup('Test')
+    .bindPopup(popup)
     .openPopup();
 
 function onClick(e) {
