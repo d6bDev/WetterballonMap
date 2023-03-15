@@ -12,4 +12,5 @@ var test = L.marker([51.505, -0.09]).addTo(map).bindPopup(popup);
 
 function onClick(e) {
     test.setLatLng(e.latlng);
+		 console.log(e);
 }
