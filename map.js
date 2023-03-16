@@ -10,14 +10,16 @@ var popup = L.popup().setContent('<button>Confirm Position</button>');
 
 var test = L.marker([51.505, -0.09]).addTo(map).bindPopup(popup);
 
+
 function onClick(e) {
     test.setLatLng(e.latlng);
 
 //put latlng in cookies
 console.log(e.latlng);
 const latlng = e.latlng;
-
-document.cookie = "lat=" + latlng[0] + ";";
-document.cookie = "lng=" + latlng[1] + ";";
-
+console.log(latlng);
+/*
+window.sessionStorage.setItem("lat",e.lating);
+window.sessionStorage.setItem("lng",e.lating);
+*/
 }
