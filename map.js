@@ -1,3 +1,8 @@
+
+var popup = L.popup().setContent('<button>Confirm Position</button>');
+
+var test = L.marker([51.505, -0.09]).addTo(map).bindPopup(popup);
+
 function loadmap(){
     var map = L.map('map').setView([51.505, -0.09], 14);
 
@@ -6,10 +11,6 @@ function loadmap(){
     }).addTo(map);
 
     map.on('click', onClick);
-
-    var popup = L.popup().setContent('<button>Confirm Position</button>');
-
-    var test = L.marker([51.505, -0.09]).addTo(map).bindPopup(popup);
 }
 
 function onClick(e) {
