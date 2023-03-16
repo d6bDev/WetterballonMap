@@ -9,10 +9,9 @@ function loadmap() {
 
     map.on('click', onClick);
 
-    var popup = L.popup().setContent('<button>Confirm Position</button>');
+    var popup = L.popup().setContent('<input id="confirmbutton" type="button" value="Confirm Coordinates" />');
 
     var test = L.marker([52.70253708487367, 7.294074558464667]).addTo(map).bindPopup(popup);
-
 
     function onClick(e) {
         //move marker position to selected position
@@ -34,10 +33,14 @@ function loadmap() {
     }
 
     function makeCookies() {
+        console.log("Success!")
         //Geodata
         setCookies("lat", tempcoords.lat, 1);
         setCookies("lng", tempcoords.lng, 1);
     }
+
+    //document.getElementById("confirmbutton").onclick = makeCookies;
+
 }
 
 function init() {
