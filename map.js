@@ -9,9 +9,29 @@ function loadmap() {
 
     map.on('click', onClick);
 
-    var popup = L.popup().setContent('<input id="confirmbutton" type="button" value="Confirm Coordinates" />');
+    var test = L.marker([52.70253708487367, 7.294074558464667]).addTo(map)
 
-    var test = L.marker([52.70253708487367, 7.294074558464667]).addTo(map).bindPopup(popup);
+    test.on('click', function(e) {
+        var popup = L.popup();
+        var container = L.DomUtil.create('div'),
+            confirmButton = createButton('Confirm', container);
+
+        popup
+            .setLatLng(e.latlng)
+            .setContent(confirmButton)
+            .openOn(map);
+
+        L.DomEvent.on(confirmButton, 'click', () => {
+            makeCookies()
+        });
+    })
+
+    function createButton(label, container) {
+        var btn = L.DomUtil.create('button', '', container);
+        btn.setAttribute('type', 'button');
+        btn.innerHTML = label;
+        return btn;
+    }
 
     function onClick(e) {
         //move marker position to selected position
@@ -24,7 +44,6 @@ function loadmap() {
         tempcoords.lng = e.latlng.lng
     }
 
-    //createcookies
     function setCookies(cname, cvalue, exdays) {
         const d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -33,14 +52,11 @@ function loadmap() {
     }
 
     function makeCookies() {
-        console.log("Success!")
         //Geodata
         setCookies("lat", tempcoords.lat, 1);
         setCookies("lng", tempcoords.lng, 1);
+        console.log("Button Pressed, Cookies Saved!")
     }
-
-    //document.getElementById("confirmbutton").onclick = makeCookies;
-
 }
 
 function init() {
