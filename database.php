@@ -23,8 +23,8 @@ if (mysqli_connect_errno()){
     echo "Failed to connect to MySQL" . mysqli_connect_error();
 }
 
-$sql = "INSERT INTO landing_assumption (fname, lname, gmail, lat, lng, min_temp, max_height, TPU, ABS, Nylon)
-VALUES ('" . $_COOKIE[CR10_filament] . "', '" . $_COOKIE[ender_filament] . "', '" . $_COOKIE[CR10_fan_speed] . "', '" . $_COOKIE[ender_fan_speed] . "', '" . $_COOKIE[PLA_temp] . "', '" . $_COOKIE[Holz_PLA_temp] . "', '" . $_COOKIE[PETG_temp] . "', '" . $_COOKIE[TPU_temp] . "', '" . $_COOKIE[ABS_temp] . "', '" . $_COOKIE[Nylon_temp] . "')";
+$sql = "INSERT INTO landing_assumption (gmail, lat, lng, min_temp, max_height)
+VALUES ('" . $_COOKIE[lat] . "', '" . $_COOKIE[lng] . "', '" . $_COOKIE[min_temp] . "', '" . $_COOKIE[max_height]  . "')";
 
 if ($con->query($sql) === TRUE) {
   echo "New record created successfully";
