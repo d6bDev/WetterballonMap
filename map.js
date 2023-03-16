@@ -3,7 +3,7 @@ var popup = L.popup().setContent('<button>Confirm Position</button>');
 var test = L.marker([51.505, -0.09]).addTo(map).bindPopup(popup);
 
 
-function loadmap(){
+function loadmap(){}
 
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -11,7 +11,7 @@ function loadmap(){
     }).addTo(map);
 
     map.on('click', onClick);
-}
+
 
 function onClick(e) {
     test.setLatLng(e.latlng);
@@ -27,7 +27,7 @@ function onClick(e) {
 }
 
 //createcokies
-function setCookie(cname, cvalue, exdays) {
+function setCookies(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     let expires = "expires="+ d.toUTCString();
