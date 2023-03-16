@@ -39,7 +39,7 @@ function makeCookies(){
     var latlng;
     //Geodata
     setCookies("lat", latlng,1);// Muss noch heraus finden welcher data typ e.latlng hat 
-    setCookies("lat", latlng,1);
+    setCookies("lng", latlng,1);
 
 
 }
