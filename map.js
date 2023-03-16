@@ -46,7 +46,7 @@ function makeCookies(){
 
 
 
-function inti(){
+function init(){
     loadmap();
 
     console.log("Website geladen");
