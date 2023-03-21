@@ -5,10 +5,10 @@
   $dbname = 'Weatherballon';
   $hostname = '192.168.178.71:3306';
 
-  if(!isset($_Session['username'])) {
+  //if(!isset($_Session['username'])) got to login
     $_Session['username'] = 'julius.huesers@gmail.com';  
     $password = '1234';
-  }
+
 
   $con = mysqli_connect($hostname, $_Session['username'], $password, $dbname);
 
