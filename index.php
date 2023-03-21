@@ -1,6 +1,32 @@
 <?php
-session_start();
-&pdo = new PDO('mysql:host=192.168.178.71:3306;dbname=Weatherballon', 'julius.huesers@iserv-marianum.de','PASSWORD(`1234`)');//Variabel für benutzer einsetzen
+  session_start();
+  //&pdo = new PDO('mysql:host=192.168.178.71:3306;dbname=Weatherballon', 'julius.huesers@iserv-marianum.de','1234');//Variabel für benutzer einsetzen // PDO funktioniert anscheinend bei meinem Server nur mit einer extension, deshalb alte methode
+
+  $dbname = 'Weatherballon';
+  $hostname = '192.168.178.71:3306';
+
+  if(!isset($_Session['username'])) {
+    $_Session['username'] = 'julius.huesers@gmail.com';  
+    $password = '1234';
+  }
+
+  $con = mysqli_connect($hostname, $_Session['username'], $password, $dbname);
+
+  if (mysqli_connect_errno()){
+      echo "Failed to connect to MySQL" . mysqli_connect_error();
+  }
+
+  $sql = "INSERT INTO gues_contest (gmail, lat, lng, min_temp, max_height)
+  VALUES ('" . $_COOKIE[lat] . "', '" . $_COOKIE[lng] . "', '" . $_COOKIE[min_temp] . "', '" . $_COOKIE[max_height]  . "')";
+
+  if ($con->query($sql) === TRUE) {
+    echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+
+  $con->close();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,6 +35,7 @@ session_start();
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
       <title>Map</title>
       <link rel="stylesheet" href="css.css">
+      <link rel = "icon" type="image/x-icon" href="favicon.ico">
       
   </head>
   <body onload="init()">
