@@ -1,8 +1,12 @@
+<?php
+session_start();
+&pdo = new PDO('mysql:host=192.168.178.71:3306;dbname=Weatherballon', 'julius.huesers@iserv-marianum.de','PASSWORD(`1234`)');//Variabel für benutzer einsetzen
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  x  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
     <title>Map</title>
     <link rel="stylesheet" href="css.css">
 </head>
