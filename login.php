@@ -40,9 +40,9 @@ if (isset($_POST['login'])){
     <form action="<?php echo htmlspecialchars($_Server['PHP_SELF']);?>" method="post">
 
         <label for="id_nmb">Identifikation nummer</label>
-        <input type="number" id="id_nmb" name="id_nmb">
+        <input type="text" id="id_nmb" name="id_nmb">
 
-        <input type="text" value="Login"  name="Login">
+        <input type="submit" value="Login"  name="Login">
     </form>
 
     <p>
