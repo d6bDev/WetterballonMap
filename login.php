@@ -25,7 +25,7 @@ if (isset($_POST['login'])){
             //Session
             /*$_Session['auth'] = true;
             $_Session['id'] = $data['id'];*/
-            header("location: quiz.php")
+            header("location: quiz.php");
         }
     }
 }
