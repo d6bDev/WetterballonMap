@@ -15,7 +15,7 @@ if (isset($_POST['login'])){
     if (empty($errors)){
         $sql = "SELECT id from users where email = ?;";
         $stmt = $db->prepare($sql);
-        $stmt->execute([$email]);
+        $stmt->execute([$id_nmb]);
         $data = $stmt->fetch();
 
         if(!$data){
