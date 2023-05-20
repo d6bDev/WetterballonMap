@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $db = "Weatherballon";
-$name = "input_waetherballon";
+$name = "input_weatherballon";
 $pwd = "";
 
 try {
