@@ -20,6 +20,7 @@ if (isset($_POST['login'])){
 
         if(!$data){
             array_push($errors, 'Idenftifikation Nummer nicht gefunden.');
+            print($errors);
         }
         else {
             //Session
