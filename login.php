@@ -42,7 +42,7 @@ if (isset($_POST['login'])){
         <label for="id_nmb">Identifikation nummer</label>
         <input type="number" id="id_nmb" name="id_nmb">
 
-        <input type="submit" value="Login"  name="Login">
+        <input type="text" value="Login"  name="Login">
     </form>
 
     <p>
