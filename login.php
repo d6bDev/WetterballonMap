@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 require "database.php";
 
 $id_nmb = "";
@@ -23,8 +23,8 @@ if (isset($_POST['login'])){
         }
         else {
             //Session
-            $_Session['auth'] = true;
-            $_Session['id'] = $data['id'];
+            /*$_Session['auth'] = true;
+            $_Session['id'] = $data['id'];*/
             header("location: quiz.php")
         }
     }
