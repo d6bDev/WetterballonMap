@@ -28,7 +28,7 @@ if (isset($_POST['register'])){
     }
 
     if (empty($errors)){
-        $sql = "INSERT INTO users (vorname, email, password) VALUES (?,?,?)";
+        $sql = "INSERT INTO users (vorname, email, passwort) VALUES (?,?,?)";
         $stmt = $conn->prepare($sql);
         if ($stmt->execute([$username, $email, password_hash($pwd, PASSWORD_DEFAULT)])) {
             header("location:login.php");
