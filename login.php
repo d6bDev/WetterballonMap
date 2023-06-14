@@ -22,7 +22,7 @@ if (isset($_POST['Login'])) {
         if(!$data) {
             array_push($errors, 'E-Mail not found.');
         } else {
-            if (password_verify($pwd, $data['password'])){
+            if (password_verify($pwd, $data['passwort'])){
                 //Session
                 $_SESSION['auth'] = true;
                 $_SESSION['id'] = $data['id'];
