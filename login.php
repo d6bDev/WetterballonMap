@@ -2,52 +2,69 @@
 session_start();
 require "database.php";
 
-$id_nmb = "";
+$email = $pwd = "";
 $errors = [];
 
-if (isset($_POST['login'])){
-    $id_nmb = trim($_POST['id_nmb']);
+if (isset($_POST['Login'])) {
+    $email = trim($_POST['email']);
+    $pwd = trim($_POST['pwd']);
 
-    if ($id_nmb == ''){
-        array_push($errors, 'Eingabe fehlt.');
+    if ($email == '' || $pwd == ''){
+        array_push($errors, 'input is missing.');
     }
 
-    if (empty($errors)){
-        $sql = "SELECT id from users where email = ?;";
-        $stmt = $db->prepare($sql);
-        $stmt->execute([$id_nmb]);
+    if (empty($errors)) {
+        $sql = "SELECT id, vorname, passwort FROM users WHERE email = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$email]);
         $data = $stmt->fetch();
 
-        if(!$data){
-            array_push($errors, 'Idenftifikation Nummer nicht gefunden.');
-            print($errors);
-        }
-        else {
-            //Session
-            $_Session['auth'] = true;
-            $_Session['id'] = $data['id'];
-            header("location: quiz.php");
+        if(!$data) {
+            array_push($errors, 'E-Mail not found.');
+        } else {
+            if (password_verify($pwd, $data['password'])){
+                //Session
+                $_SESSION['auth'] = true;
+                $_SESSION['id'] = $data['id'];
+                $_SESSION['vorname'] = $data['vorname'];
+                header("location:welcome.php");
+            } else {
+                array_push($errors, 'Password is wrong.');
+            }
         }
     }
 }
+
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Document</title>
 </head>
 <body>
+    
     <h1>Login</h1>
 
     <form action="<?php echo htmlspecialchars($_Server['PHP_SELF']);?>" method="post">
 
-        <label for="id_nmb">Identifikation nummer</label>
-        <input type="text" id="id_nmb" name="id_nmb">
+        <p>
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email">
+        </p>
+        
+        <p>
+            <label for="pwd">Password</label>
+            <input type="password" id="pwd" name="pwd">
+        </p>
 
-        <input type="submit" value="Login"  name="Login">
+        <p>
+            <input type="submit" value="Login" name="Login">
+        </p>
+
     </form>
 
     <p>

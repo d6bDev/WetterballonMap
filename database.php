@@ -1,11 +1,12 @@
 <?php
-$host = "localhost";
-$db = "Weatherballon";
+
+$host = "192.168.178.71";
+$db = "loginseite";
 $name = "input_weatherballon";
 $pwd = "";
 
-try {
-    $db = new PDO("mysql:host=$host;dbname=$db", $name, $pwd);
-} catch (PDOException $e) {
+try{
+    $conn = new PDO("mysql:host=$host;dbname=$db", $name, $pwd);
+} catch (PDOException $e){
     die($e->getMessage());
 }
