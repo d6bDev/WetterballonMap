@@ -17,9 +17,9 @@ if(!isset($_SESSION['auth']) || $_SESSION['auth'] !== true){
     <link rel="stylesheet" href="css.css">
     <title>Quiz</title>
 </head>
-<body>
+<body onload="init()">
     
-    <h1>Wilkommen</h1>
+    <h1>Quiz</h1>
 
     <?php echo $_SESSION['vorname']; ?><!--Man kann jetzt personespezifische Daten einfügen-->
 
