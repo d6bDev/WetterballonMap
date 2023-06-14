@@ -27,7 +27,7 @@ if (isset($_POST['Login'])) {
                 $_SESSION['auth'] = true;
                 $_SESSION['id'] = $data['id'];
                 $_SESSION['vorname'] = $data['vorname'];
-                header("location:welcome.php");
+                header("location:quiz.php");
             } else {
                 array_push($errors, 'Password is wrong.');
             }
@@ -43,7 +43,7 @@ if (isset($_POST['Login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
     
