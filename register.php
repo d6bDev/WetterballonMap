@@ -50,6 +50,8 @@ if (isset($_POST['register'])){
 <body>
     
     <h1>Register</h1>
+    <a href="index.html">Zurück zur Hauptseite</a>
+    <a href="login.php">Zum Login</a>
 
     <form action="<?php echo htmlspecialchars($_Server['PHP_SELF']);?>" method="post">
         

@@ -20,6 +20,7 @@ if(!isset($_SESSION['auth']) || $_SESSION['auth'] !== true){
 <body onload="init()">
     
     <h1>Quiz</h1>
+    <a href="logout.php">Zum Logout</a>
 
     <?php echo $_SESSION['vorname']; ?><!--Man kann jetzt personespezifische Daten einfügen-->
 

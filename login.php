@@ -2,6 +2,11 @@
 session_start();
 require "database.php";
 
+if(isset($_SESSION['auth']) && $_SESSION['auth'] == true){
+    header("location: quiz.php");
+    exit;
+}
+
 $email = $pwd = "";
 $errors = [];
 
@@ -48,6 +53,7 @@ if (isset($_POST['Login'])) {
 <body>
     
     <h1>Login</h1>
+    <a href="index.html">Zurück zur Hauptseite</a>
 
     <form action="<?php echo htmlspecialchars($_Server['PHP_SELF']);?>" method="post">
 
@@ -63,6 +69,10 @@ if (isset($_POST['Login'])) {
 
         <p>
             <input type="submit" value="Login" name="Login">
+        </p>
+
+        <p>
+            Noch nicht <a href="register.php">Registriert</a>?
         </p>
 
     </form>
