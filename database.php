@@ -1,7 +1,7 @@
 <?php
 
 $host = "192.168.178.71";
-$db = "loginseite";
+$db = "Weatherballon";
 $name = "input_weatherballon";
 $pwd = "";
 
