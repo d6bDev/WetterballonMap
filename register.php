@@ -1,5 +1,5 @@
 <?php
-include "database.php";
+include "assets/database.php";
 
 $username = $email = $pwd = $confirm_pwd = '';
 $errors = [];

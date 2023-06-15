@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "database.php";
+require "assets/database.php";
 
 if(isset($_SESSION['auth']) && $_SESSION['auth'] == true){
     header("location: quiz.php");
