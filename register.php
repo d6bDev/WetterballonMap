@@ -48,46 +48,57 @@ if (isset($_POST['register'])){
     <title>Register</title>
 </head>
 <body>
+
+    <ul class="bar">
+        <a href="index.html">Home</a>
+        <a href="quiz.php">Quiz</a>
+        <a href="login.php">Login</a>
+        <a href="register.php">Registrierung</a>
+        <?php echo $_SESSION['vorname']; ?>
+    </ul>
+    <div class="content">
+        <header><h1>Register</h1></header>
+
+        <div class="register_formular">
+            <form action="<?php echo htmlspecialchars($_Server['PHP_SELF']);?>" method="post">
+            
+                <p>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username">
+                </p>
+                
+                <p>
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" name="email">
+                </p>
+                
+                <p>
+                    <label for="pwd">password</label>
+                    <input type="password" id="pwd" name="pwd">
+                </p>
+                
+                <p>
+                    <label for="confirm_pwd">confirm password</label>
+                    <input type="password" id="confirm_pwd" name="confirm_pwd">
+                </p>
+
+                <p>
+                    <input type="submit" value="register" name="register">
+                </p>
+
+             </form>
+
+            <p>
+                <?php
+                    foreach($errors as $error){
+                        echo $error."<br>";
+                    }
+                ?>
+            </p>
+        </div>
+        
+    </div>
     
-    <h1>Register</h1>
-    <a href="index.html">Zurück zur Hauptseite</a>
-    <a href="login.php">Zum Login</a>
-
-    <form action="<?php echo htmlspecialchars($_Server['PHP_SELF']);?>" method="post">
-        
-        <p>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username">
-        </p>
-        
-        <p>
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="email">
-        </p>
-        
-        <p>
-            <label for="pwd">password</label>
-            <input type="password" id="pwd" name="pwd">
-        </p>
-        
-        <p>
-            <label for="confirm_pwd">confirm password</label>
-            <input type="password" id="confirm_pwd" name="confirm_pwd">
-        </p>
-
-        <p>
-            <input type="submit" value="register" name="register">
-        </p>
-
-    </form>
-
-        <p>
-            <?php
-                foreach($errors as $error){
-                    echo $error."<br>";
-                }
-            ?>
-        </p>
     
 </body>
 </html>
