@@ -48,42 +48,52 @@ if (isset($_POST['Login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title><h1>Login</h1></title>
 </head>
 <body>
-    
-    <h1>Login</h1>
-    <a href="index.html">Zurück zur Hauptseite</a>
 
-    <form action="<?php echo htmlspecialchars($_Server['PHP_SELF']);?>" method="post">
+    <ul class="bar">
+        <a href="index.html">Home</a>
+        <a href="quiz.php">Quiz</a>
+        <a href="login.php">Login</a>
+        <a href="register.php">Registrierung</a>
+        <?php echo $_SESSION['vorname']; ?>
+    </ul>
+    <div class="content">
+        <header>Login</header>
 
-        <p>
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="email">
-        </p>
-        
-        <p>
-            <label for="pwd">Password</label>
-            <input type="password" id="pwd" name="pwd">
-        </p>
+        <div class="login_formular">
+            <form action="<?php echo htmlspecialchars($_Server['PHP_SELF']);?>" method="post">
 
-        <p>
-            <input type="submit" value="Login" name="Login">
-        </p>
+                <p>
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" name="email">
+                </p>
 
-        <p>
-            Noch nicht <a href="register.php">Registriert</a>?
-        </p>
+                <p>
+                    <label for="pwd">Password</label>
+                    <input type="password" id="pwd" name="pwd">
+                </p>
 
-    </form>
+                <p>
+                    <input type="submit" value="Login" name="Login">
+                </p>
 
-    <p>
-        <?php
-            foreach($errors as $error){
-                echo $error."<br>";
-            }
-        ?>
-    </p>
+                <p>
+                    Noch nicht <a href="register.php">Registriert</a>?
+                </p>
+
+            </form>
+
+            <p>
+            <?php
+                foreach($errors as $error){
+                    echo $error."<br>";
+                }
+            ?>
+            </p>
+        </div>
+    </div>
 
 </body>
 </html>
