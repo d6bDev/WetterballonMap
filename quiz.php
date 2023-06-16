@@ -18,16 +18,30 @@ if(!isset($_SESSION['auth']) || $_SESSION['auth'] !== true){
     <title>Quiz</title>
 </head>
 <body onload="init()">
-    
-    <h1>Quiz</h1>
-    <a href="logout.php">Zum Logout</a>
+      
+    <ul class="bar">
+        <a href="index.html">Home</a>
+        <a href="quiz.php">Quiz</a>
+        <a href="logout.php">Logout</a>
+        <?php echo $_SESSION['vorname']; ?>
+    </ul>
 
-    <?php echo $_SESSION['vorname']; ?><!--Man kann jetzt personespezifische Daten einfügen-->
+    <div class="content">
 
-    <!--------------Map----------------------->
-    <div id="map" class="map" style="width: 50; height: 50"></div>
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-    <script src="assets/map.js"></script>
+        <header><h1>Quiz</h1></header>
+
+        <div class="quiz">
+            
+            <!--------------Map----------------------->
+            <div id="map" class="map" style="width: 50; height: 50"></div>
+            <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+            <script src="assets/map.js"></script>
+
+        </div>
+
+         <?php echo $_SESSION['vorname']; ?><!--Man kann jetzt personespezifische Daten einfügen-->
+
+    </div>
 
 </body>
 </html>
