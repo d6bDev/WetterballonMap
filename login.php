@@ -58,7 +58,7 @@ if (isset($_POST['Login'])) {
         <li><a href="quiz.php">Quiz</a></li>
         <li style="float: right;"><a class="active" href="login.php">Login</a></li>
         <li style="float: right;"><a href="register.php">Registrierung</a></li>
-        <span style="float: right;"><?php echo $_SESSION['vorname']; ?></span>
+        <li style="float: right;"><?php echo $_SESSION['vorname']; ?></li>
     </ul>
 
     <div class="content">
@@ -82,7 +82,7 @@ if (isset($_POST['Login'])) {
                 </p>
 
                 <p>
-                    Noch nicht <a href="register.php">Registriert</a>?
+                    Noch nicht <a href="register.php">registriert</a>?
                 </p>
 
             </form>
