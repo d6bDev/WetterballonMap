@@ -23,7 +23,7 @@ if(!isset($_SESSION['auth']) || $_SESSION['auth'] !== true){
         <li><a href="index.html">Home</a></li>
         <li><a class="active" href="quiz.php">Quiz</a></li>
         <li style="float: right;"><a href="logout.php">Logout</a></li>
-        <?php echo $_SESSION['vorname']; ?>
+        <span style="float: right;"><?php echo $_SESSION['vorname']; ?></span>
     </ul>
 
     <div class="content">

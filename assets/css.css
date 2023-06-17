@@ -1,14 +1,38 @@
+
+
+
 .map {
     width: 30%;
     padding: 30%;
     box-sizing: border-box;
     position: relative;
 }
-/*
-.content{
-    align-items: center;
-    width: fit-content;
-}*/
+
+.Überschrift{
+    color: #16378f;
+}
+
+.Unterschrift{
+    color: gray;
+}
+
+iframe{
+    display: block;
+    margin: auto;
+    float: center;
+}
+
+.News{
+    text-align: justify;
+    width: 95%;
+    margin: auto;
+    float: center;
+}
+
+.News_assets {
+    float: right;
+    margin: auto;
+}
 
 ul {
     list-style-type: none;
@@ -43,6 +67,19 @@ li a:hover {
     background-color: #A4004A;
 }
 
-.iframe{
-    max-width: fit-content;
+.logo{
+    margin: 0;
+    object-fit: contain;
+}
+
+figure{
+    margin: 5px;
+}
+
+.titlepicture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: center;
+    width: 100%;
 }
