@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +17,7 @@
         <li style="float: right;"><img class="logo" src="https://www.marianum-meppen.de/img/logo-marianum_small.jpg" height="40"></li>
         <li style="float: right;"><a href="login.php">Login</a></li>
         <li style="float: right;"><a href="register.php">Registrierung</a></li>
-        <!--<span style="float: right;"><?php echo $_SESSION['vorname']; ?></span>>TODO:-->
+        <li style="float: right;"><a><?php echo $_SESSION['vorname']; ?></a></li>
     </ul>
 
     <div class="content">

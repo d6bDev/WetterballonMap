@@ -49,7 +49,7 @@ if (isset($_POST['Login'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css.css">
-    <title><h1>Login</h1></title>
+    <title>Login</title>
 </head>
 <body>
 
@@ -58,7 +58,7 @@ if (isset($_POST['Login'])) {
         <li><a href="quiz.php">Quiz</a></li>
         <li style="float: right;"><a class="active" href="login.php">Login</a></li>
         <li style="float: right;"><a href="register.php">Registrierung</a></li>
-        <li style="float: right;"><?php echo $_SESSION['vorname']; ?></li>
+        <li style="float: right;"><a><?php echo $_SESSION['vorname']; ?></a></li>
     </ul>
 
     <div class="content">
