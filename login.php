@@ -48,17 +48,18 @@ if (isset($_POST['Login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css.css">
     <title><h1>Login</h1></title>
 </head>
 <body>
 
-    <ul class="bar">
-        <a href="index.html">Home</a>
-        <a href="quiz.php">Quiz</a>
-        <a href="login.php">Login</a>
-        <a href="register.php">Registrierung</a>
+    <ul class="bar">    
+        <li><a href="index.html">Home</a></li>
+        <li><a href="quiz.php">Quiz</a></li>
+        <li><a href="register.php">Registrierung</a></li>
         <?php echo $_SESSION['vorname']; ?>
     </ul>
+
     <div class="content">
         <header>Login</header>
 

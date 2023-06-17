@@ -20,9 +20,9 @@ if(!isset($_SESSION['auth']) || $_SESSION['auth'] !== true){
 <body onload="init()">
       
     <ul class="bar">
-        <a href="index.html">Home</a>
-        <a href="quiz.php">Quiz</a>
-        <a href="logout.php">Logout</a>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="quiz.php">Quiz</a></li>
+        <li><a style="float: right;" href="logout.php">Logout</a></li>
         <?php echo $_SESSION['vorname']; ?>
     </ul>
 

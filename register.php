@@ -45,15 +45,15 @@ if (isset($_POST['register'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css.css">
     <title>Register</title>
 </head>
 <body>
 
     <ul class="bar">
-        <a href="index.html">Home</a>
-        <a href="quiz.php">Quiz</a>
-        <a href="login.php">Login</a>
-        <a href="register.php">Registrierung</a>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="quiz.php">Quiz</a></li>
+        <li><a href="login.php">Login</a></li>
         <?php echo $_SESSION['vorname']; ?>
     </ul>
     <div class="content">
