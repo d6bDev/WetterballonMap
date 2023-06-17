@@ -51,7 +51,7 @@ if (isset($_POST['register'])){
 <body>
 
     <ul class="bar">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="quiz.php">Quiz</a></li>
         <li style="float: right;"><a href="login.php">Login</a></li>
         <li style="float: right;"><a class="active" href="register.php">Registrierung</a></li>

@@ -12,7 +12,7 @@ session_start();
 <body>
 
     <ul class="bar">
-        <li><a class="active" href="index.html">Home</a></li>
+        <li><a class="active" href="index.php">Home</a></li>
         <li><a href="quiz.php">Quiz</a></li>
         <li style="float: right;"><img class="logo" src="https://www.marianum-meppen.de/img/logo-marianum_small.jpg" height="40"></li>
         <li style="float: right;"><a href="login.php">Login</a></li>
