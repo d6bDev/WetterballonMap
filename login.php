@@ -56,7 +56,8 @@ if (isset($_POST['Login'])) {
     <ul class="bar">    
         <li><a href="index.html">Home</a></li>
         <li><a href="quiz.php">Quiz</a></li>
-        <li><a href="register.php">Registrierung</a></li>
+        <li style="float: right;"><a class="active" href="login.php">Login</a></li>
+        <li style="float: right;"><a href="register.php">Registrierung</a></li>
         <?php echo $_SESSION['vorname']; ?>
     </ul>
 
