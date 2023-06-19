@@ -24,7 +24,7 @@ session_start();
 
         <header><h1>Willkommen zum Projekt Wetterballon</h1></header>
 
-        <iframe width="420" height="315" src="https://youtu.be/X3Rdv65o7_M?autoplay=1&mute=1&loop=1"></iframe>
+        <iframe width="550" height="315" src="https://www.youtube.com/embed/X3Rdv65o7_M?autoplay=1&mute=1"></iframe>
         <div class="News">
             <h1 class="Überschrift">Das gibts doch gar nicht! Erste Wettersonde vom Marianum landet neben Schüco-Arena in Bielefeld</h1>
             <hr>
