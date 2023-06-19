@@ -6,6 +6,9 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Gymnasium, Marianum, Meppen, Emsland, Schulstiftung, Osnabrück, freie Schule, Privatschule, Umweltschule, Wetterballon, Röchling, Haren, Stratoflight, Schüco-Arena">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="assets/css.css">
     <title>Wetterballon</title>
 </head>
@@ -14,6 +17,7 @@ session_start();
     <ul class="bar">
         <li><a class="active" href="index.php">Home</a></li>
         <li><a href="quiz.php">Quiz</a></li>
+        <li style="float: right;"><img class="logo" src="https://www.roechling.com/typo3conf/ext/bw_roechling_template/Resources/Public/Icons/mstile-144x144.png" height="40"></li>
         <li style="float: right;"><img class="logo" src="https://www.marianum-meppen.de/img/logo-marianum_small.jpg" height="40"></li>
         <li style="float: right;"><a href="login.php">Login</a></li>
         <li style="float: right;"><a href="register.php">Registrierung</a></li>
@@ -24,7 +28,7 @@ session_start();
 
         <header><h1>Willkommen zum Projekt Wetterballon</h1></header>
 
-        <iframe width="550" height="315" src="https://www.youtube.com/embed/X3Rdv65o7_M?autoplay=1&mute=1"></iframe>
+        <iframe width="550" height="315" src="https://www.youtube.com/embed/X3Rdv65o7_M?autoplay=1&mute=1&loop=1"></iframe>
         <div class="News">
             <h1 class="Überschrift">Das gibts doch gar nicht! Erste Wettersonde vom Marianum landet neben Schüco-Arena in Bielefeld</h1>
             <hr>
