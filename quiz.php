@@ -6,6 +6,38 @@ if(!isset($_SESSION['auth']) || $_SESSION['auth'] !== true){
     exit;
 }
 
+$id = $min_temp = $max_height = $lat = $lng = "";
+$db_min_temp = $db_max_height = $db_lat = $db_lng = "";
+$errors =[];
+
+$id = $_SESSION['id'];
+
+if($id != 0 && empty($errors)){
+    $sql = "SELECT lat, lng, min_temp, max_height from users WHERE id = ? ";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$id]);
+    $data = $stmt->fetch();
+
+    if (!$data) {
+        array_push($errors, "account not found.");
+    } else {
+        $db_min_temp = $data['min_temp'];
+        $db_max_height = $data['max_height'];
+        $db_lat = $data['lat'];
+        $db_lng = $data['lng'];
+    }
+} else {
+    array_push($errors, 'error with the Session.');
+}
+
+
+if (isset($_POST['Senden'])){
+    $id = $_SESSION['id'];
+    $lat = trim($_POST['lat']);
+    $lng = trim($_POST['lng']);
+    $min_temp = trim($_POST['min_temp']);
+    $max_height = trim($_POST['max_height']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +71,49 @@ if(!isset($_SESSION['auth']) || $_SESSION['auth'] !== true){
             <div id="map" class="map" style="width: 50; height: 50"></div>
             <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
             <script src="assets/map.js"></script>
+            
+            <div class="answer_formular">
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+
+                    <p>
+                        <label for="max_altitude">Maximale Höhe in Meter</label>
+                        <input type="number" id="max_altitude" name="max_altitude">
+                    </p>
+
+                    <p>
+                        <label for="low_temp">Niedrigste Temperatur in °C</label>
+                        <input type="number" id="low_temp" name="low_temp">
+                    </p>
+
+                    <p>
+                        Landepunkt:
+                    </p>
+
+                    <p>
+                        <label for="longitude">Längengrad</label>
+                        <input type="number" id="longitude" name="longitude">
+                    </p>
+
+                    <p>
+                        <label for="latitude">Breitengrad</label>
+                        <input type="number" id="latitude" name="latitude">
+                    </p>
+
+                    <p>
+                        <input type="submit" value="Senden" name="Senden">
+                    </p>
+
+                </form>
+
+                <p>
+                    <?php
+                        foreach($errors as $error){
+                            echo $error."<br>";
+                        }
+                    ?>
+                </p>
+
+            </div>
 
         </div>
 
