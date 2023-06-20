@@ -65,7 +65,7 @@ if (isset($_POST['Login'])) {
     </ul>
 
     <div class="content">
-        <header>Login</header>
+        <header><h1>Login</h1></header>  
 
         <div class="login_formular">
             <form action="<?php echo htmlspecialchars($_Server['PHP_SELF']);?>" method="post">
