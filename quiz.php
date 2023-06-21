@@ -6,6 +6,8 @@ if(!isset($_SESSION['auth']) || $_SESSION['auth'] !== true){
     exit;
 }
 
+require "assets/database.php";
+
 $id = $min_temp = $max_height = $lat = $lng = "";
 $db_min_temp = $db_max_height = $db_lat = $db_lng = "";
 $errors =[];
@@ -25,6 +27,8 @@ if($id != 0 && empty($errors)){
         $db_max_height = $data['max_height'];
         $db_lat = $data['lat'];
         $db_lng = $data['lng'];
+        
+        //UPDATE users SET email = '...', passwort = password('...') WHERE vorname = '';
     }
 } else {
     array_push($errors, 'error with the Session.');
@@ -33,10 +37,23 @@ if($id != 0 && empty($errors)){
 
 if (isset($_POST['Senden'])){
     $id = $_SESSION['id'];
-    $lat = trim($_POST['lat']);
-    $lng = trim($_POST['lng']);
-    $min_temp = trim($_POST['min_temp']);
-    $max_height = trim($_POST['max_height']);
+    if($db_lat == '') $lat = $db_lat;
+    else $lat = trim($_POST['lat']);
+    if($db_lng == '') $lng = $db_lng;
+    else $lng = trim($_POST['lng']);
+    if($db_min_temp == '') $lng = $db_lng;
+    else $min_temp = trim($_POST['min_temp']);
+    if($db_max_height == '') $max_height = $db_max_height;
+    else $max_height = trim($_POST['max_height']);
+
+    if (empty($errors)){
+        $sql = "UPDATE users SET lat = ?, lng = ?, min_temp = ?, max_height = ? WHERE  id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$lat, $lng, $min_temp, $max_temp, $id]);
+        $data = $stmt->fetch();
+
+        echo $data;
+    }
 }
 ?>
 
