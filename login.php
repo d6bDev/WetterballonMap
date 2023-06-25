@@ -77,11 +77,11 @@ if (isset($_POST['Login'])) {
 
                 <p>
                     <label for="pwd">Password</label>
-                    <input type="password" id="pwd" name="pwd">
+                    <input type="password" id="pwd" name="pwd" placeholder="z.B. 123test">
                 </p>
 
                 <p>
-                    <input type="submit" value="Login" name="Login" placeholder="z.B. 123test">
+                    <input type="submit" value="Login" name="Login">
                 </p>
 
                 <p>
