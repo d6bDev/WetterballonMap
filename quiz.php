@@ -73,6 +73,9 @@ if (isset($_POST['Senden'])){
    <script>
         <?php 
                 echo "document.getElementById('latitude').value = $db_lat;";
+                echo "document.getElementById('longitude').value = $db_lng;";
+                echo "document.getElementById('low_temp').value = $db_min_temp";
+                echo "document.getElementById('max_altitude').value = $db_max_height";
         ?>   
    </script>
 
