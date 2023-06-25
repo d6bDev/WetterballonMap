@@ -68,22 +68,22 @@ if (isset($_POST['register'])){
             
                 <p>
                     <label for="username">Username</label>
-                    <input type="text" id="username" name="username">
+                    <input type="text" id="username" name="username" placeholder="z.B. 11e">
                 </p>
                 
                 <p>
                     <label for="email">E-Mail</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" placeholder="z.B. test.Tester@iserv-marianum.de">
                 </p>
                 
                 <p>
                     <label for="pwd">password</label>
-                    <input type="password" id="pwd" name="pwd">
+                    <input type="password" id="pwd" name="pwd" placeholder="z.B. 123test">
                 </p>
                 
                 <p>
                     <label for="confirm_pwd">confirm password</label>
-                    <input type="password" id="confirm_pwd" name="confirm_pwd">
+                    <input type="password" id="confirm_pwd" name="confirm_pwd" placeholder="z.B. 123test">
                 </p>
 
                 <p>
