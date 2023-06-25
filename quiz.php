@@ -37,19 +37,19 @@ if($id != 0 && empty($errors)){
 
 if (isset($_POST['Senden'])){
     $id = $_SESSION['id'];
-    if($db_lat == '') $lat = $db_lat;
-    else $lat = trim($_POST['lat']);
-    if($db_lng == '') $lng = $db_lng;
-    else $lng = trim($_POST['lng']);
-    if($db_min_temp == '') $lng = $db_lng;
-    else $min_temp = trim($_POST['min_temp']);
-    if($db_max_height == '') $max_height = $db_max_height;
-    else $max_height = trim($_POST['max_height']);
+    if(trim($_POST['latitude']) == '') $lat = $db_lat;
+    else $lat = trim($_POST['latitude']);
+    if(trim($_POST['longitude']) == '') $lng = $db_lng;
+    else $lng = trim($_POST['longitude']);
+    if(trim($_POST['low_temp']) == '') $min_temp = $db_min_temp;
+    else $min_temp = trim($_POST['low_temp']);
+    if(trim($_POST['max_altitude']) == '') $max_height = $db_max_height;
+    else $max_height = trim($_POST['max_altitude']);
 
     if (empty($errors)){
         $sql = "UPDATE users SET lat = ?, lng = ?, min_temp = ?, max_height = ? WHERE  id = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->execute([$lat, $lng, $min_temp, $max_temp, $id]);
+        $stmt->execute([$lat, $lng, $min_temp, $max_height, $id]);
         $data = $stmt->fetch();
 
         echo $data;
