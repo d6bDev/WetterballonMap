@@ -69,7 +69,7 @@ if (isset($_POST['Senden'])){
     <link rel="stylesheet" href="assets/css.css">
     <title>Quiz</title>
 </head>
-<body onload="init()">
+<body onload="init(); form()">
 
     <ul class="bar">
         <li><a href="index.php">Home</a></li>
@@ -138,12 +138,14 @@ if (isset($_POST['Senden'])){
 
     </div>
     <script>
+        form() {
         <?php 
                 echo "document.getElementById('latitude').value = $db_lat; \n";
                 echo "document.getElementById('longitude').value = $db_lng; \n";
                 echo "document.getElementById('low_temp').value = $db_min_temp; \n";
                 echo "document.getElementById('max_altitude').value = $db_max_height; \n";
         ?>
+        }
    </script>
 </body>
 </html>
