@@ -73,6 +73,26 @@ if (isset($_POST['Senden'])){
     <script>
         function form() {
         <?php 
+                        
+            if($id != 0 && empty($errors)){
+                $sql = "SELECT lat, lng, min_temp, max_height from users WHERE id = ? ";
+                $stmt = $conn->prepare($sql);
+                $stmt->execute([$id]);
+                $data = $stmt->fetch();
+
+                if (!$data) {
+                    array_push($errors, "account not found.");
+                } else {
+                    $db_min_temp = $data['min_temp'];
+                    $db_max_height = $data['max_height'];
+                    $db_lat = $data['lat'];
+                    $db_lng = $data['lng'];
+                    
+                    //UPDATE users SET email = '...', passwort = password('...') WHERE vorname = '';
+                }
+            } else {
+                array_push($errors, 'error with the Session.');
+            }
                 echo "document.getElementById('latitude').value = $db_lat; \n";
                 echo "document.getElementById('longitude').value = $db_lng; \n";
                 echo "document.getElementById('low_temp').value = $db_min_temp; \n";
