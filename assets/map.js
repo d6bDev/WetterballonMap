@@ -1,4 +1,5 @@
 function loadmap() {
+    form();
     var latitude = document.getElementById('latitude').value;
     var longitude = document.getElementById('longitude').value;
     let tempcoords = {lat: latitude, lng: longitude}
