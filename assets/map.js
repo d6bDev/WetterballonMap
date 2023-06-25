@@ -39,7 +39,10 @@ function loadmap() {
 
         //save selected lat & lng to temp storage
         console.log("latitude: " + e.latlng.lat + ", longitude: " + e.latlng.lng);
-
+        
+        document.getElementById('latitude').value = e.latlng.lat;
+        document.getElementById('longitude').value = e.latlng.lng;
+        
         tempcoords.lat = e.latlng.lat
         tempcoords.lng = e.latlng.lng
     }
