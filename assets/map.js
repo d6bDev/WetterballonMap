@@ -1,7 +1,9 @@
 function loadmap() {
-    let tempcoords = {lat: 52.70253708487367, lng: 7.294074558464667}
+    var latitude = document.getElementById('latitude').value;
+    var longitude = document.getElementById('longitude').value;
+    let tempcoords = {lat: latitude, lng: longitude}
 
-    var map = L.map('map').setView([52.70253708487367, 7.294074558464667], 14);
+    var map = L.map('map').setView([latitude, longitude], 14);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 18,
@@ -42,7 +44,7 @@ function loadmap() {
         
         document.getElementById('latitude').value = e.latlng.lat;
         document.getElementById('longitude').value = e.latlng.lng;
-        
+
         tempcoords.lat = e.latlng.lat
         tempcoords.lng = e.latlng.lng
     }
