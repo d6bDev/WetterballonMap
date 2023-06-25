@@ -12,7 +12,7 @@ function loadmap() {
 
     map.on('click', onClick);
 
-    var test = L.marker([52.70253708487367, 7.294074558464667]).addTo(map)
+    var test = L.marker([latitude, longitude]).addTo(map)
 
     test.on('click', function(e) {
         var popup = L.popup();
