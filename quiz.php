@@ -70,6 +70,16 @@ if (isset($_POST['Senden'])){
     <title>Quiz</title>
 </head>
 <body onload="init(); form()">
+    <script>
+        function form() {
+        <?php 
+                echo "document.getElementById('latitude').value = $db_lat; \n";
+                echo "document.getElementById('longitude').value = $db_lng; \n";
+                echo "document.getElementById('low_temp').value = $db_min_temp; \n";
+                echo "document.getElementById('max_altitude').value = $db_max_height; \n";
+        ?>
+        }
+   </script>
 
     <ul class="bar">
         <li><a href="index.php">Home</a></li>
@@ -137,15 +147,5 @@ if (isset($_POST['Senden'])){
          <?php echo $_SESSION['vorname']; ?><!--Man kann jetzt personespezifische Daten einfügen-->
 
     </div>
-    <script>
-        form() {
-        <?php 
-                echo "document.getElementById('latitude').value = $db_lat; \n";
-                echo "document.getElementById('longitude').value = $db_lng; \n";
-                echo "document.getElementById('low_temp').value = $db_min_temp; \n";
-                echo "document.getElementById('max_altitude').value = $db_max_height; \n";
-        ?>
-        }
-   </script>
 </body>
 </html>
