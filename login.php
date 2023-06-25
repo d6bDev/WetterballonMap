@@ -72,7 +72,7 @@ if (isset($_POST['Login'])) {
 
                 <p>
                     <label for="email">E-Mail</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" placeholder="z.B. test.Tester@iserv-marianum.de">
                 </p>
 
                 <p>
@@ -81,7 +81,7 @@ if (isset($_POST['Login'])) {
                 </p>
 
                 <p>
-                    <input type="submit" value="Login" name="Login">
+                    <input type="submit" value="Login" name="Login" placeholder="z.B. 123test">
                 </p>
 
                 <p>
