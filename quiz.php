@@ -1,12 +1,12 @@
 <?php
 session_start();
+require "assets/database.php";
 
 if(!isset($_SESSION['auth']) || $_SESSION['auth'] !== true){
     header("location: login.php");
     exit;
 }
 
-require "assets/database.php";
 
 $id = $min_temp = $max_height = $lat = $lng = "";
 $db_min_temp = $db_max_height = $db_lat = $db_lng = "";
