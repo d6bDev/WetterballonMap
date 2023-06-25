@@ -92,6 +92,8 @@ if (isset($_POST['Senden'])){
                         $db_lat = 52.70253708487367;
                         $db_lng = 7.29407455846466;
                     }
+                    if($db_min_temp == "") $db_min_temp = 0;
+                    if($$db_max_height == "") $db_max_height = 0;
                     
                     //UPDATE users SET email = '...', passwort = password('...') WHERE vorname = '';
                 }
