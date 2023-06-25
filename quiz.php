@@ -70,7 +70,11 @@ if (isset($_POST['Senden'])){
     <title>Quiz</title>
 </head>
 <body onload="init()">
-      
+   <?php 
+        echo "<scrip>
+                document.getElementById('latitude').value = $lat;
+            </scrip>";
+   ?>   
     <ul class="bar">
         <li><a href="index.php">Home</a></li>
         <li><a class="active" href="quiz.php">Quiz</a></li>
