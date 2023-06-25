@@ -124,12 +124,12 @@ if (isset($_POST['Senden'])){
 
                     <p>
                         <label for="max_altitude">Maximale Höhe in Meter</label>
-                        <input type="number" id="max_altitude" name="max_altitude">
+                        <input type="number" id="max_altitude" step="any" name="max_altitude">
                     </p>
 
                     <p>
                         <label for="low_temp">Niedrigste Temperatur in °C</label>
-                        <input type="number" id="low_temp" name="low_temp">
+                        <input type="number" id="low_temp" step="any" name="low_temp">
                     </p>
 
                     <p>
@@ -138,12 +138,12 @@ if (isset($_POST['Senden'])){
 
                     <p>
                         <label for="longitude">Längengrad</label>
-                        <input type="number" id="longitude" name="longitude">
+                        <input type="number" id="longitude" step="any" name="longitude">
                     </p>
 
                     <p>
                         <label for="latitude">Breitengrad</label>
-                        <input type="number" id="latitude" name="latitude">
+                        <input type="number" id="latitude" step="any" name="latitude">
                     </p>
 
                     <p>
@@ -164,8 +164,7 @@ if (isset($_POST['Senden'])){
 
         </div>
 
-         <?php echo $_SESSION['vorname']; ?><!--Man kann jetzt personespezifische Daten einfügen-->
-
+        
     </div>
 </body>
 </html>
