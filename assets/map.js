@@ -2,6 +2,12 @@ function loadmap() {
     form();
     var latitude = document.getElementById('latitude').value;
     var longitude = document.getElementById('longitude').value;
+    if (longitude == "" || latitude == ""){
+        latitude = 52.70253708487367;
+        longitude = 7.29407455846466;
+        document.getElementById('latitude').value = latitude;
+        document.getElementById('longitude').value = longitude;
+    }
     let tempcoords = {lat: latitude, lng: longitude}
 
     var map = L.map('map').setView([latitude, longitude], 14);
