@@ -84,10 +84,6 @@ if (isset($_POST['Login'])) {
                     <input type="submit" value="Login" name="Login">
                 </p>
 
-                <p>
-                    Noch nicht <a href="register.php">registriert</a>?
-                </p>
-
             </form>
 
             <p>

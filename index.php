@@ -39,7 +39,7 @@ session_start();
                 <p>
                     Geplanter Start*: Mittwoch, der 06.12.2023 um 9:40 Uhr
                     </br>
-                    Tippabgabe:     nur am04.12 und 05.12.2023 
+                    Tippabgabe:     nur am 04.12 und 05.12.2023 
                     </br> 
                     *bei unpassenden Wetterbedingugen muss der Start verschoben werden
                 </p>

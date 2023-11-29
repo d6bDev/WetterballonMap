@@ -98,6 +98,7 @@ li a:hover {
     margin-left: auto;
     margin-right: auto;
     width: 35%;
+    max-height: fit-content;
 }
 
 figure{
