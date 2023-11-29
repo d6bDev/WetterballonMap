@@ -129,14 +129,28 @@ if (isset($_POST['Senden'])){
             <div class="answer_formular">
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 
+                <div>
+
+                    <p>
+                        Gebt hier als Klasse/Tutorenkurs jeweils einen Tipp ab:
+                    </p>
+
                     <p>
                         <label for="max_altitude">Maximale Höhe in Meter</label>
                         <input type="number" id="max_altitude" step="any" name="max_altitude" placeholder="z.B. 1232">
+                        <br>
+                        <div class="Unterschrift">
+                        In einer bestimmten Höhe platzt unser Wetterballon. Er hat dann einen Durchmesser in der Größe eines großen Einfamilienhauses. Danach gleitet er an drei Fallschirmen zurück zur Erde.
+                        </div> 
                     </p>
 
                     <p>
                         <label for="low_temp">Niedrigste Temperatur in °C</label>
                         <input type="number" id="low_temp" step="any" name="low_temp" placeholder="z.B. -32">
+                        <br>
+                        <div class="Unterschrift">
+                        Nach oben hin wird es zunächst kälter, am Ende oft aber auch wieder wärmer. Unsere Kameras an Board werden verschiedene Flüssigkeiten filmen, die wir in Reagenzgläsern mitfliegen lassen. Mal sehen, wie sie sich auf dem Flug verhalten. Ein Datenlogger misst neben dem Luftdruck auch die Außentemperatur und viele andere physikalische Größen.
+                        </div>
                     </p>
 
                     <p>
@@ -153,10 +167,18 @@ if (isset($_POST['Senden'])){
                         <input type="number" id="latitude" step="any" name="latitude" placeholder="z.B. 52.70253708487367">
                     </p>
 
+                    <div class="Unterschrift">
+                    Winde treiben die Wetterballone oft viele Kilometer weit weg. Gebt hier keine Koordinaten ein, sondern wählt einen <span style="text-decoration: underline;">Punkt auf der Landkarte</span>. Das Programm generiert automatisch die zugehörigen Koordinaten.
+                    </div>
+
+                    <p class="">
+                        Bestätigt eure Eingabe am Ende mit <b style="text-decoration:underline;">Senden</b>. Schon nehmt iht am gewinnspiel teil.
+                    </p>
+
                     <p>
                         <input type="submit" value="Senden" name="Senden">
                     </p>
-
+                </div>
                 </form>
 
                 <p>

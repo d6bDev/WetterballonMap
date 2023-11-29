@@ -1,6 +1,9 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 body{
     margin: 0;
+    font-family: Georgia,serif;
+    font-family: Comic Neue;
+    font-size: 200%;
 }
 
 .content{
@@ -21,11 +24,12 @@ body{
 }
 
 .Überschrift{
-    color: #16378f;
+    color: black;
 }
 
 .Unterschrift{
     color: gray;
+    font-size: 80%;
 }
 
 iframe{
@@ -39,6 +43,7 @@ iframe{
     width: 95%;
     margin: auto;
     float: center;
+    font-size: larger;
 }
 
 .News_assets {
@@ -86,6 +91,13 @@ li a:hover {
 .logo{
     margin: 0;
     object-fit: contain;
+}
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
 }
 
 figure{
