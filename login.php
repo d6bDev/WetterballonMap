@@ -19,7 +19,7 @@ if (isset($_POST['Login'])) {
     }
 
     if (empty($errors)) {
-        $sql = "SELECT id, vorname, passwort FROM users WHERE email = ?";
+        $sql = "SELECT id, vorname, passwort, nachname FROM users WHERE email = ?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$email]);
         $data = $stmt->fetch();
@@ -32,9 +32,10 @@ if (isset($_POST['Login'])) {
                     $_SESSION['auth'] = true;
                     $_SESSION['id'] = $data['id'];
                     $_SESSION['vorname'] = $data['vorname'];
+                    $_Session['nachname'] = $data['nachname'];
                     header("location:quiz.php");
                 } else {
-                    $sql = "SELECT id, vorname, passwort FROM users WHERE email = ? AND id <> ?";
+                    $sql = "SELECT id, vorname, passwort, nachname FROM users WHERE email = ? AND id <> ?";
                     $stmt = $conn->prepare($sql);
                     $stmt->execute([$email, $data['id']]);
                     $data = $stmt->fetch();
@@ -46,6 +47,7 @@ if (isset($_POST['Login'])) {
                             $_SESSION['auth'] = true;
                             $_SESSION['id'] = $data['id'];
                             $_SESSION['vorname'] = $data['vorname'];
+                            $_Session['nachname'] = $data['nachname'];
                             header("location:quiz.php");
                         } else {
                             array_push($errors, 'Password is wrong.');
