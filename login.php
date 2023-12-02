@@ -77,7 +77,7 @@ if (isset($_POST['Login'])) {
         <li><a href="index.php">Home</a></li>
         <li><a href="quiz.php">Quiz</a></li>
         <li style="float: right;"><a class="active" href="login.php">Login</a></li>
-        <li style="float: right;"><a><?php echo $_SESSION['vorname'].''.$_Session['nachname']; ?></a></li>
+        <li style="float: right;"><a><?php echo $_SESSION['vorname'].'-'.$_Session['nachname']; ?></a></li>
     </ul>
 
     <div class="content">
