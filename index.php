@@ -33,27 +33,25 @@ session_start();
         </div>
 
         <div>
-            <p>
-        Auf dieser Seite kommt ihr dem Weltall ganz nah.
-        <br>
-        Seid live dabei, wenn im Park des Marianum ein großer Wetterballon in Richtung All startet.
-        <br>
-        Nehmt mit eurer Klasse an unserem kleinen Gewinnspiel teil.
-        <br>
-        Klickt dazu oben rechts auf Login, gebt pro Klasse/Tutorenkus folgende Tipps ab:
-        <br>
-        <ol>
-            <li>Wie hoch wird der Ballon fliegen?</li>
-            <li>Welcher minimalen Umgebungstemperatur wird der Ballon ausgesetzt sein?</li>
-            <li>Wo wird der Ballon landen?</li>
-        </ol>
-        <br>
-</p>
+            Auf dieser Seite kommt ihr dem Weltall ganz nah.
+            <br>
+            Seid live dabei, wenn im Park des Marianum ein großer Wetterballon in Richtung All startet.
+            <br>
+            Nehmt mit eurer Klasse an unserem kleinen Gewinnspiel teil.
+            <br>
+            Klickt dazu oben rechts auf Login, gebt pro Klasse/Tutorenkus folgende Tipps ab:
+            <br>
+            <ol>
+                <li>Wie hoch wird der Ballon fliegen?</li>
+                <li>Welcher minimalen Umgebungstemperatur wird der Ballon ausgesetzt sein?</li>
+                <li>Wo wird der Ballon landen?</li>
+            </ol>
         </div>
 
-        <div class="Info">
-            <h1 class="Überschrift" style="text-decoration: underline;">Info:</h1>
 
+
+        <div class="Info">
+        <h1 class="Überschrift" style="text-decoration: underline">Info:</h1>
             <div>
                 <p>
                     Geplanter Start*: Mittwoch, der 06.12.2023 um 9:40 Uhr
