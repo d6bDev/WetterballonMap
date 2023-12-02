@@ -54,6 +54,9 @@ iframe{
 .bar{
     width: 100%;
 }
+ol{
+    overflow: hidden;
+}
 
 ul {
     list-style-type: none;
