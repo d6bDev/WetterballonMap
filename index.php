@@ -21,7 +21,7 @@ session_start();
         <li style="float: right;"><img class="logo" src="https://www.marianum-meppen.de/img/logo-marianum_small.jpg" height="60"></li>
         <li style="float: right;"><a href="login.php">Login</a></li>
         <!--<li style="float: right;"><a href="register.php">Registrierung</a></li>-->
-        <li style="float: right;"><a><?php echo $_SESSION['vorname']; ?></a></li>
+        <li style="float: right;"><a><?php echo $_SESSION['vorname'].''.$_Session['nachname']; ?></a></li>
     </ul>
 
     <div class="News">
@@ -30,6 +30,25 @@ session_start();
 
         <div>
             <img class="center" src="images/Auf_ins_All.png" alt="Auf ins All">
+        </div>
+
+        <div>
+            <p>
+        Auf dieser Seite kommt ihr dem Weltall ganz nah.
+        <br>
+        Seid live dabei, wenn im Park des Marianum ein großer Wetterballon in Richtung All startet.
+        <br>
+        Nehmt mit eurer Klasse an unserem kleinen Gewinnspiel teil.
+        <br>
+        Klickt dazu oben rechts auf Login, gebt pro Klasse/Tutorenkus folgende Tipps ab:
+        <br>
+        <ol>
+            <li>Wie hoch wird der Ballon fliegen?</li>
+            <li>Welcher minimalen Umgebungstemperatur wird der Ballon ausgesetzt sein?</li>
+            <li>Wo wird der Ballon landen?</li>
+        </ol>
+        <br>
+</p>
         </div>
 
         <div class="Info">

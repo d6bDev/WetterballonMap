@@ -112,7 +112,7 @@ if (isset($_POST['Senden'])){
         <li><a href="index.php">Home</a></li>
         <li><a class="active" href="quiz.php">Quiz</a></li>
         <li style="float: right;"><a href="logout.php">Logout</a></li>
-        <li style="float: right;"><a><?php echo $_SESSION['vorname']; ?></a></li>
+        <li style="float: right;"><a><?php echo $_SESSION['vorname'].''.$_Session['nachname']; ?></a></li>
     </ul>
 
     <div class="content">
@@ -136,7 +136,7 @@ if (isset($_POST['Senden'])){
                     </p>
 
                     <p>
-                        <label for="max_altitude">Maximale Höhe in Meter</label>
+                        <label for="max_altitude">Maximale Höhe in m</label>
                         <input type="number" id="max_altitude" step="any" name="max_altitude" placeholder="z.B. 1232">
                         <br>
                         <div class="Unterschrift">

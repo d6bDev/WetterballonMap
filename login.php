@@ -23,18 +23,35 @@ if (isset($_POST['Login'])) {
         $stmt = $conn->prepare($sql);
         $stmt->execute([$email]);
         $data = $stmt->fetch();
-
         if(!$data) {
             array_push($errors, 'E-Mail not found.');
         } else {
-            if (password_verify($pwd, $data['passwort'])){
-                //Session
-                $_SESSION['auth'] = true;
-                $_SESSION['id'] = $data['id'];
-                $_SESSION['vorname'] = $data['vorname'];
-                header("location:quiz.php");
-            } else {
-                array_push($errors, 'Password is wrong.');
+            if(empty($errors)) {
+                if (password_verify($pwd, $data['passwort'])){
+                    //Session
+                    $_SESSION['auth'] = true;
+                    $_SESSION['id'] = $data['id'];
+                    $_SESSION['vorname'] = $data['vorname'];
+                    header("location:quiz.php");
+                } else {
+                    $sql = "SELECT id, vorname, passwort FROM users WHERE email = ? AND id <> ?";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->execute([$email, $data['id']]);
+                    $data = $stmt->fetch();
+                    if(!$data){
+                        array_push($errors,'Password is wrong');
+                    } else {
+                        if (password_verify($pwd, $data['passwort'])){
+                            //Session
+                            $_SESSION['auth'] = true;
+                            $_SESSION['id'] = $data['id'];
+                            $_SESSION['vorname'] = $data['vorname'];
+                            header("location:quiz.php");
+                        } else {
+                            array_push($errors, 'Password is wrong.');
+                        }
+                    }
+                }
             }
         }
     }
@@ -60,8 +77,7 @@ if (isset($_POST['Login'])) {
         <li><a href="index.php">Home</a></li>
         <li><a href="quiz.php">Quiz</a></li>
         <li style="float: right;"><a class="active" href="login.php">Login</a></li>
-        <li style="float: right;"><a href="register.php">Registrierung</a></li>
-        <li style="float: right;"><a><?php echo $_SESSION['vorname']; ?></a></li>
+        <li style="float: right;"><a><?php echo $_SESSION['vorname'].''.$_Session['nachname']; ?></a></li>
     </ul>
 
     <div class="content">
@@ -72,7 +88,7 @@ if (isset($_POST['Login'])) {
 
                 <p>
                     <label for="email">E-Mail</label>
-                    <input type="email" id="email" name="email" placeholder="z.B. test.Tester@iserv-marianum.de">
+                    <input type="text" id="email" name="email" placeholder="z.B. test.Tester@iserv-marianum.de">
                 </p>
 
                 <p>
